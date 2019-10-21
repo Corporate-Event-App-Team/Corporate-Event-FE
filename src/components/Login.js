@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import { Formik } from "formik";
 
-import {StyledLoginDiv, StyledForm, StyledInput, StyledPassword, StyledButton} from "../styles";
+import {StyledLoginDiv, StyledForm, StyledInput,  StyledPassword, StyledButton} from "../styles";
 import NavBar from "./NavBar";
 
 export const Login = props => {
@@ -11,7 +11,7 @@ export const Login = props => {
   console.log("props from redux Store", props);
   return (
     <StyledLoginDiv>
-        <NavBar/>
+         <NavBar/>
       <Formik
         initialValues={userDetails}
         validate={userDetails => {
