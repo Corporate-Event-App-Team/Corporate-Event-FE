@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import { NotificationManager } from "react-notifications";
+import styled from 'styled-components';
+
 import image from "../imgs/register_back.jpg";
 import logo from "../imgs/corporate_logo.png";
 import Axios from 'axios';
 import  Form  from './Form';
 // import {Route} from 'react-router-dom';
-import styled from 'styled-components';
 
 const RegisterStyle = styled.div`
     
@@ -58,7 +60,8 @@ const initialFormValues = {
 
 export default function Register(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
-  const [displayLogin, setDisplayLogin] = useState(false)
+  const [displayLogin, setDisplayLogin] = useState(false);
+
 
   const onNameChange = e => {
     setFormValues({...formValues, username: e.target.value})
@@ -78,7 +81,7 @@ export default function Register(props) {
 
   const onFormSubmit = (e, formValues) => {
     e.preventDefault();
-    props.history.push("/");
+    
 
 
     const newUserDetails = {
@@ -86,14 +89,17 @@ export default function Register(props) {
       password: formValues.password,
       id: Date.now()
     }
-
     if (formValues.password === formValues.confirmPassword) {
       Axios.post('https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/register', newUserDetails)
       .then((response) => {
-        alert(response.data.message)
         setDisplayLogin(true)
+        NotificationManager.success("Registration successful")
+        props.history.push("/");
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        NotificationManager.error(err.message,"Something went terribly wrong!")
+          console.log(err)
+        })
     } else {
       setFormValues({...formValues, password: '', confirmPassword: ''});
       alert('password fields must be the same!!')
