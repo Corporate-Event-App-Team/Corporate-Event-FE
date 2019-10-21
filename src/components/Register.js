@@ -4,6 +4,54 @@ import logo from "../img/image2vector.svg";
 import Axios from 'axios';
 import { Form } from './Form';
 // import {Route} from 'react-router-dom';
+import styled from 'styled-components';
+
+const RegisterStyle = styled.div`
+    
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: #C4C4C4;
+         
+        img {
+            width: 5%;
+        }
+
+        a {
+            background-color: yellow;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 120px;
+            height: 35px;
+            text-align: center;
+            margin-top: 12px;
+            margin-right: 15px;
+            padding-top: 10px;
+            color: white;
+
+            &:hover {
+                background-color: blue;
+            }
+        }
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        background-color: #E5E5E5;
+        
+        img {
+            width: 50%;
+        }
+
+        section {
+            text-align: center;
+            
+            margin: 0;
+        }
+    }
+`
 
 const initialFormValues = {
   username: '',
@@ -57,16 +105,16 @@ export default function Register() {
   }
 
   return (
-    <div className="App">
+    <RegisterStyle>
       <nav>
         <img src={logo} alt="corporate-logo" />
         <a href="Login.js">LOGIN</a>
       </nav>
       
       <div>
-      <figure>
+      
         <img src={image} alt='for-register' />
-      </figure>
+      
 
       <section>
         <h3>We offer centralised management for your event planning needs and allow you meet all your client’s requirements with ease. Fill in your information below to get started.</h3>
@@ -80,6 +128,6 @@ export default function Register() {
           // <Route exact path='/login' component={Login} />
         )
       } */}
-    </div>
+    </RegisterStyle>
   );
 }

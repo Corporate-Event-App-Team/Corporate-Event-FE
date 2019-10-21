@@ -5,10 +5,11 @@ const FormStyle = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* align-items: baseline; */
 
     label input {
         height: 35px;
-        width: 150px;
+        width: 250px;
         border-radius: 10px;
         margin-bottom: 20px;
         margin-left: 20px;
@@ -19,6 +20,14 @@ const FormStyle = styled.form`
         width: 150px;
         border-radius: 10px;
         border: none;
+        margin-left: 50%;
+        background-color: yellow;
+        color: white;
+
+        &:hover {
+            background-color: blue;
+            
+        }
     }
 `
 
