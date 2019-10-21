@@ -1,18 +1,20 @@
 import React from 'react';
 // import logo from './logo.svg';
+import image from "./img/adults-communication-cooperation-2422294.jpg";
+import logo from "./img/image2vector.svg";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <nav>
-        <img />
+        <img src={logo} alt="corporate-logo" />
         <a href="Login.js">LOGIN</a>
       </nav>
       
       <div>
       <figure>
-        <img />
+        <img src={image} alt='for-register' />
       </figure>
 
       <section>
