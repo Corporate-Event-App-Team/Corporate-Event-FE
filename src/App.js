@@ -6,6 +6,7 @@ import './App.css';
 import Login from './components/Login';
 import * as actionCreators from "../src/state/actionCreators";
 import Dashboard from './components/Dashboard';
+import Register from './components/Register';
 
 
 export function App(props) {
@@ -14,7 +15,10 @@ export function App(props) {
   return (
     <div className="App">
       <Route exact path="/" component={Login}/>
+      <Route exact path="/register" component={Register}/>
+
       <Route exact path="/dashboard" component={Dashboard}/>
+
     </div>
   );
 }

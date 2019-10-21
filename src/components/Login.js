@@ -3,11 +3,15 @@ import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import { Formik } from "formik";
 
+import {StyledLoginDiv, StyledForm, StyledInput,  StyledPassword, StyledButton} from "../styles";
+import NavBar from "./NavBar";
+
 export const Login = props => {
   const [userDetails] = useState({ username: "", password: "" });
   console.log("props from redux Store", props);
   return (
-    <div className="login-form">
+    <StyledLoginDiv>
+         <NavBar/>
       <Formik
         initialValues={userDetails}
         validate={userDetails => {
@@ -27,6 +31,7 @@ export const Login = props => {
         onSubmit={(userDetails, actions) => {
           props.onLogin(userDetails);
           actions.resetForm();
+          props.history.push("/dashboard")
         }}
       >
         {({
@@ -37,36 +42,37 @@ export const Login = props => {
           handleSubmit,
           isSubmitting
         }) => (
-          <form onSubmit={handleSubmit}>
+          <StyledForm onSubmit={handleSubmit}>
+              <h4>Login to continue</h4>
             <label>Username</label>
-            <input
+            <StyledInput
               value={values.username}
               type="text"
               name="username"
               onChange={handleChange}
             />
-            <span style={{ color: "red" }}>
+            <span style={{ color: "red", background:"rgba(255, 255, 255, 0.7)", padding:"0.5em", margin:"0.5em"}}>
               {" "}
               {errors.username && touched.username && errors.username}
             </span>
             <label>Password</label>
-            <input
+            <StyledPassword
               value={values.password}
               type="password"
               name="password"
               onChange={handleChange}
             />
-            <span style={{ color: "red" }}>
+            <span style={{ color: "red", background:"rgba(255, 255, 255, 0.7)", padding:"0.5em", margin:"0.5em"}}>
               {" "}
               {errors.password && touched.password && errors.password}
             </span>
-            <button type="submit" disabled={isSubmitting}>
+            <StyledButton type="submit" disabled={isSubmitting}>
               Submit
-            </button>
-          </form>
+            </StyledButton>
+          </StyledForm>
         )}
       </Formik>
-    </div>
+    </StyledLoginDiv>
   );
 };
 
