@@ -1,9 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FormStyle = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    label input {
+        height: 35px;
+        width: 150px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    button {
+        height: 35px;
+        width: 150px;
+        border-radius: 10px;
+        border: none;
+    }
+`
 
 export const Form = ({onFormSubmit, formValues, onNameChange, onPasswordChange, onCPasswordChange, onEmailChange}) => {
     
     return (
-        <form>
+        <FormStyle>
           <label>
             Username
             <input type='text' onChange={onNameChange} value={formValues.username} />
@@ -26,6 +48,6 @@ export const Form = ({onFormSubmit, formValues, onNameChange, onPasswordChange, 
 
           <button onClick={(e)=> onFormSubmit(e, formValues)} >REGISTER</button>
 
-        </form>
+        </FormStyle>
     )
 }
