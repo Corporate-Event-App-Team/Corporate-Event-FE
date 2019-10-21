@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import { Formik } from "formik";
 
+import {StyledLoginDiv} from "../styles";
+
 export const Login = props => {
   const [userDetails] = useState({ username: "", password: "" });
   console.log("props from redux Store", props);
   return (
-    <div className="login-form">
+    <StyledLoginDiv>
       <Formik
         initialValues={userDetails}
         validate={userDetails => {
@@ -66,7 +68,7 @@ export const Login = props => {
           </form>
         )}
       </Formik>
-    </div>
+    </StyledLoginDiv>
   );
 };
 
