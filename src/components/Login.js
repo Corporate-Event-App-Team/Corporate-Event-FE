@@ -2,16 +2,52 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import { Formik } from "formik";
+import { NotificationManager } from "react-notifications";
 
-import {StyledLoginDiv, StyledForm, StyledInput,  StyledPassword, StyledButton} from "../styles";
+import {
+  StyledLoginDiv,
+  StyledForm,
+  StyledInput,
+  StyledPassword,
+  StyledButton
+} from "../styles";
 import NavBar from "./NavBar";
 
 export const Login = props => {
   const [userDetails] = useState({ username: "", password: "" });
   console.log("props from redux Store", props);
+
+//   const createNotification = type => {
+//     return () => {
+//       switch (type) {
+//         case "info":
+//           NotificationManager.info(" A moment while we check your details");
+//           break;
+//         case "success":
+//           NotificationManager.success(" A moment while we check your details");
+//           break;
+//         case "warning":
+//           NotificationManager.warning(
+//             "Warning message",
+//             "Close after 3000ms",
+//             3000
+//           );
+//           break;
+//         case "error":
+//           NotificationManager.error(
+//             "Error message",
+//             "Something went terribly wrong"
+//           );
+//           break;
+//         default:
+//           NotificationManager.info("Info message");
+//       }
+//     };
+//   };
+
   return (
     <StyledLoginDiv>
-         <NavBar/>
+      <NavBar />
       <Formik
         initialValues={userDetails}
         validate={userDetails => {
@@ -31,7 +67,6 @@ export const Login = props => {
         onSubmit={(userDetails, actions) => {
           props.onLogin(userDetails);
           actions.resetForm();
-          props.history.push("/dashboard")
         }}
       >
         {({
@@ -43,7 +78,7 @@ export const Login = props => {
           isSubmitting
         }) => (
           <StyledForm onSubmit={handleSubmit}>
-              <h4>Login to continue</h4>
+            <h4>Login to continue</h4>
             <label>Username</label>
             <StyledInput
               value={values.username}
@@ -51,7 +86,14 @@ export const Login = props => {
               name="username"
               onChange={handleChange}
             />
-            <span style={{ color: "red", background:"rgba(255, 255, 255, 0.7)", padding:"0.5em", margin:"0.5em"}}>
+            <span
+              style={{
+                color: "red",
+                background: "rgba(255, 255, 255, 0.7)",
+                padding: "0.5em",
+                margin: "0.5em"
+              }}
+            >
               {" "}
               {errors.username && touched.username && errors.username}
             </span>
@@ -62,11 +104,22 @@ export const Login = props => {
               name="password"
               onChange={handleChange}
             />
-            <span style={{ color: "red", background:"rgba(255, 255, 255, 0.7)", padding:"0.5em", margin:"0.5em"}}>
+            <span
+              style={{
+                color: "red",
+                background: "rgba(255, 255, 255, 0.7)",
+                padding: "0.5em",
+                margin: "0.5em"
+              }}
+            >
               {" "}
               {errors.password && touched.password && errors.password}
             </span>
-            <StyledButton type="submit" disabled={isSubmitting}>
+            <StyledButton
+              type="submit"
+              onClick={() => NotificationManager.info("A moment while we check your details")}
+              disabled={isSubmitting}
+            >
               Submit
             </StyledButton>
           </StyledForm>
