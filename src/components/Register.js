@@ -56,7 +56,7 @@ const initialFormValues = {
   confirmPassword: ''
 }
 
-export default function Register() {
+export default function Register(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
   const [displayLogin, setDisplayLogin] = useState(false)
 
@@ -78,6 +78,8 @@ export default function Register() {
 
   const onFormSubmit = (e, formValues) => {
     e.preventDefault();
+    props.history.push("/");
+
 
     const newUserDetails = {
       username: formValues.username,
