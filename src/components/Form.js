@@ -52,7 +52,7 @@ export const Form = ({onFormSubmit, formValues, onNameChange, onPasswordChange, 
 
           <label>
             Confirm Password
-            <input type='current-password' onChange={onCPasswordChange} value={formValues.confirmPassword} />
+            <input type='password' onChange={onCPasswordChange} value={formValues.confirmPassword} />
           </label>
 
           <button onClick={(e)=> onFormSubmit(e, formValues)} >REGISTER</button>
