@@ -19,7 +19,7 @@ const RegisterStyle = styled.div`
         }
 
         a {
-            background-color: yellow;
+            background-color: blue;
             text-decoration: none;
             border-radius: 5px;
             width: 120px;
@@ -31,7 +31,7 @@ const RegisterStyle = styled.div`
             color: white;
 
             &:hover {
-                background-color: blue;
+                background-color: yellow;
             }
         }
     }

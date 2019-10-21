@@ -21,12 +21,12 @@ const FormStyle = styled.form`
         border-radius: 10px;
         border: none;
         margin-left: 50%;
-        background-color: yellow;
+        background-color: blue;
         color: white;
 
         &:hover {
-            background-color: blue;
-            
+            background-color: yellow;
+
         }
     }
 `
