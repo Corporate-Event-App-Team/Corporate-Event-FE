@@ -6,15 +6,16 @@ export const getError = err => {
     return { type: types.GET_ERROR, payload: err };
   };
 
-export const onLogin = () => dispatch => {
+export const onLogin = (userDetails) => dispatch => {
     axios
-        .post("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/login", "userDetails")
+        .post("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/login", userDetails)
         .then(res => {
             console.log("response from login endpoint", res);
-            window.localStorage.setItem("token", res.data.token);
+            dispatch({type: types.ON_LOGIN, payload: res.data.token})
         })
         .catch(err => {
             console.log("response from login endpoint", err);
+            dispatch(getError(err.message));
         })   
 
 };

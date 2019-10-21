@@ -1,25 +1,17 @@
-import React from "react";
-import axios from "axios";
+import React, {useState} from "react";
+import {connect} from "react-redux";
+import * as actionCreators from "../state/actionCreators";
 
-const Login = (props) => {
-
-    const {userDetails, setUserDetails } = props;
+ export const Login = (props) => {
+    const [userDetails, setUserDetails] = useState({username: "", password: ""});
+console.log("props from redux Store", props);
     const valueChange = (e) => {
         setUserDetails({...userDetails, [e.target.name]: e.target.value});
         console.log("form values login", userDetails);
     }
     const onLogin = (e) => {
         e.preventDefault();
-        axios
-        .post("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/login", userDetails)
-        .then(res => {
-            console.log("response from login endpoint", res);
-            window.localStorage.setItem("token", res.data.token);
-        })
-        .catch(err => {
-            console.log("response from login endpoint", err);
-        })   
-
+        props.onLogin(userDetails);
     };
 
     return (
@@ -39,4 +31,4 @@ const Login = (props) => {
     )
 }
 
-export default Login;
+export default connect(state => state,actionCreators)(Login);

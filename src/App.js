@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {connect} from "react-redux";
 import './App.css';
 import Login from './components/Login';
+import * as actionCreators from "../src/state/actionCreators";
 
-function App() {
-  const [userDetails, setUserDetails] = useState({username: "", password: ""});
+
+export function App(props) {
+  console.log("props from app", props);
 
   return (
     <div className="App">
-      <Login userDetails={userDetails} setUserDetails={setUserDetails}/>
+      <Login/>
     </div>
   );
 }
 
-export default App;
+export default connect(state => state,actionCreators)(App);
