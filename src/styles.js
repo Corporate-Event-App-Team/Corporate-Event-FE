@@ -100,7 +100,7 @@ export const StyledDashboard = styled.div`
 `;
 
 export const StyledUSerDiv = styled.div`
-  width: 20vw;
+  width: 25vw;
   height: 100vh;
   background: #090429;
   box-shadow: 0 +6px 8px 6px lightblue;
