@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NotificationManager } from "react-notifications";
 import styled from "styled-components";
 import uuid from "uuid";
+import form_back from "../imgs/form_back.jpeg";
 
 import image from "../imgs/register_back.jpg";
 import logo from "../imgs/corporate_logo.png";
@@ -11,11 +12,14 @@ import Form from "./Form";
 
 const RegisterStyle = styled.div`
   height: 100vh;
+  background-image:url(${form_back});
+  background-size: cover;
+  width: 100vw;
 
   nav {
     display: flex;
     justify-content: space-between;
-    background-color: #c4c4c4;
+    background-color: rgba(255, 255, 255, 0.3);
 
     img {
       width: 5%;
@@ -40,12 +44,17 @@ const RegisterStyle = styled.div`
   div {
     display: flex;
     align-items: center;
-    background-color: #e5e5e5;
+    /* background-color: #e5e5e5; */
+    width: 50vw;
+    margin-left: 25vw;
+    margin-top: 1em;
+  border: 0.5em solid rgba(255, 255, 255, 0.3);
 
-    img {
+
+    /* img {
       width: 50%;
       height: 100vh;
-    }
+    } */
     section {
       text-align: center;
 
@@ -102,14 +111,9 @@ export default function Register(props) {
       </nav>
 
       <div>
-        <img src={image} alt="for-register" />
+        {/* <img src={image} alt="for-register" /> */}
 
         <section>
-          <h3>
-            We offer centralised management for your event planning needs and
-            allow you meet all your client’s requirements with ease. Fill in
-            your information below to get started.
-          </h3>
 
           <Form
             onNameChange={onNameChange}

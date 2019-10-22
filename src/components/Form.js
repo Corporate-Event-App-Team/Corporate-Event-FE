@@ -6,14 +6,17 @@ const FormStyle = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* width: 50vw; */
-    /* align-items: baseline; */
-    label input {
+    h3 {
+      margin-left: 1.7em;
+    }
+    label  input {
         height: 35px;
         width: 250px;
         border-radius: 10px;
         margin-bottom: 20px;
-        margin-left: 20px;
+        margin-left: 1em;
+        margin-right: 1em;
+        background-color: rgba(255, 255, 255, 0.3);
     }
     button {
         height: 35px;
@@ -24,10 +27,10 @@ const FormStyle = styled.form`
         margin-bottom: 12px;
         padding-top: 10px;
         padding-bottom: 10px;
-        background-color: #090429;
+        background-color: #E54A51;
         color: white;
         &:hover {
-            background-color: #FBAB06;
+            background-color: #7BCFEB;
         }
     }
 `
@@ -40,6 +43,11 @@ const Form = (props) => {
 
     return (
         <FormStyle>
+           <h3>
+            We offer centralised management for your<br/> event planning needs and
+            allow you meet<br/> all your client’s requirements<br/> with ease. Fill in
+            your information below<br/> to get started.
+          </h3>
           <label>
             Username
             <input type='text' name="username" onChange={onNameChange} value={formValues.username} />
