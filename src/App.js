@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import * as actionCreators from "../src/state/actionCreators";
 import Dashboard from "./components/Dashboard";
 import Register from "./components/Register";
+import AddEvents from "./components/AddEvents";
+import PrivateRoute from "./components/PrivateRoute";
 
 export function App(props) {
   console.log("props from app", props);
@@ -16,9 +18,12 @@ export function App(props) {
   return (
     <div className="App">
       <Route exact path="/" component={Login} />
-      <Route exact path="/register" component={Register} />
-
-      <Route exact path="/dashboard" component={Dashboard} />
+      <Route  path="/register" component={Register} />
+      <Route  path="/dashboard/add-event" component={AddEvents}/>
+      <PrivateRoute
+         exact path="/dashboard"
+          component={Dashboard}
+        />
       <NotificationContainer />
     </div>
   );

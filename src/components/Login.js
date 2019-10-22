@@ -17,34 +17,6 @@ export const Login = props => {
   const [userDetails] = useState({ username: "", password: "" });
   console.log("props from redux Store", props);
 
-//   const createNotification = type => {
-//     return () => {
-//       switch (type) {
-//         case "info":
-//           NotificationManager.info(" A moment while we check your details");
-//           break;
-//         case "success":
-//           NotificationManager.success(" A moment while we check your details");
-//           break;
-//         case "warning":
-//           NotificationManager.warning(
-//             "Warning message",
-//             "Close after 3000ms",
-//             3000
-//           );
-//           break;
-//         case "error":
-//           NotificationManager.error(
-//             "Error message",
-//             "Something went terribly wrong"
-//           );
-//           break;
-//         default:
-//           NotificationManager.info("Info message");
-//       }
-//     };
-//   };
-
   return (
     <StyledLoginDiv>
       <NavBar />
@@ -65,7 +37,7 @@ export const Login = props => {
           return errors;
         }}
         onSubmit={(userDetails, actions) => {
-          props.onLogin(userDetails);
+          props.onLogin(userDetails,props);
           actions.resetForm();
         }}
       >
@@ -89,7 +61,7 @@ export const Login = props => {
             <span
               style={{
                 color: "red",
-                background: "rgba(255, 255, 255, 0.7)",
+                background: "rgba(255, 255, 255, 0.0)",
                 padding: "0.5em",
                 margin: "0.5em"
               }}
@@ -107,7 +79,7 @@ export const Login = props => {
             <span
               style={{
                 color: "red",
-                background: "rgba(255, 255, 255, 0.7)",
+                background: "rgba(255, 255, 255, 0.0)",
                 padding: "0.5em",
                 margin: "0.5em"
               }}
