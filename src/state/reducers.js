@@ -16,9 +16,23 @@ export const loginReducer = (state = initialToken, action) => {
 };
 
 const initialEvents = {
+  eventId: '',
   eventName: '',
   descriptionOfEvent: '',
   date: '',
   time: '',
-  
+  todoList: [],
+  vendors: []
+}
+
+export function dashboardReducer(state=initialEvents, action) {
+  switch(action.type) {
+    case types.ADD_EVENT: 
+    return {
+      ...state, ...action.payload
+    };
+
+    default: 
+    return state;
+  }
 }

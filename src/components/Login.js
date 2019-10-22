@@ -61,7 +61,7 @@ export const Login = props => {
             <span
               style={{
                 color: "red",
-                background: "rgba(255, 255, 255, 0.7)",
+                background: "rgba(255, 255, 255, 0.0)",
                 padding: "0.5em",
                 margin: "0.5em"
               }}
@@ -79,7 +79,7 @@ export const Login = props => {
             <span
               style={{
                 color: "red",
-                background: "rgba(255, 255, 255, 0.7)",
+                background: "rgba(255, 255, 255, 0.0)",
                 padding: "0.5em",
                 margin: "0.5em"
               }}

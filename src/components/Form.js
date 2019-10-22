@@ -47,7 +47,17 @@ const Form = (props) => {
 
           <label>
             Email Address
-            <input type='text' name="emailAddress" onChange={onNameChange} value={formValues.emailAddress} />
+            <input type='text' name="email" onChange={onNameChange} value={formValues.email} />
+          </label>
+
+          <label>
+            Name of Company
+            <input type='text' name="company" onChange={onNameChange} value={formValues.company} />
+          </label>
+
+          <label>
+            Role
+            <input type='text' name="role" onChange={onNameChange} value={formValues.role} />
           </label>
 
           <label>
@@ -55,12 +65,7 @@ const Form = (props) => {
             <input type='password' name="password" onChange={onNameChange} value={formValues.password} />
           </label>
 
-          <label>
-            Confirm Password
-            <input type='password' name="confirmPassword" onChange={onNameChange} value={formValues.confirmPassword} />
-          </label>
-
-         <button onClick={(e)=> onFormSubmit(e, formValues)} >REGISTER</button>
+          <button onClick={(e)=> onFormSubmit(e, formValues)} >REGISTER</button>
 
         </FormStyle>
     )

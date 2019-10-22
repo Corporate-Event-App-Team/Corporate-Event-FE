@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NotificationManager } from "react-notifications";
 import styled from "styled-components";
+import uuid from "uuid";
 
 import image from "../imgs/register_back.jpg";
 import logo from "../imgs/corporate_logo.png";
@@ -54,10 +55,12 @@ const RegisterStyle = styled.div`
 `;
 
 const initialFormValues = {
-  username: "",
-  emailAddress: "",
+  company: "",
+  email: "",
+  id: uuid(),
   password: "",
-  confirmPassword: ""
+  role: "",
+  username: ""
 };
 
 export default function Register(props) {
@@ -81,16 +84,12 @@ export default function Register(props) {
 
   const onFormSubmit = (e, formValues) => {
     e.preventDefault();
-
-    const newUserDetails = {
-      username: formValues.username,
-      password: formValues.password,
-      id: Date.now()
-    };
-    if (formValues.password === formValues.confirmPassword) {
+    // const newUser = {...formValues,}
+    
+    if (formValues.password.length > 8 && formValues.password.length < 12) {
       Axios.post(
         "https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/register",
-        newUserDetails
+        formValues
       )
         .then(response => {
           NotificationManager.success("Registration successful");
@@ -105,8 +104,8 @@ export default function Register(props) {
           console.log("error from Register endpoint",err);
         });
     } else {
-      setFormValues({ ...formValues, password: "", confirmPassword: "" });
-      alert("password fields must be the same!!");
+      setFormValues({ ...formValues, password: "" });
+      alert("password must be more than 8 characters but less than 12!!");
     }
   };
 

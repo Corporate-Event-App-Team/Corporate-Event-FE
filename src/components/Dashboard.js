@@ -6,9 +6,23 @@ import { axiosWithAuth } from "../axios/axiosWithAuth";
 const Dashboard  = (props) => {
     console.log("props from Dashboard", props);
         useEffect(() => {
-            axiosWithAuth().get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users")
+            axiosWithAuth().get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/")
             .then(response  => {
-                console.log("response from dashboard server", response);
+                console.log("response from dashboard server users endpoint", response);
+            } )
+            .catch(err => {
+                console.log("response from dashboard server", err);
+            })
+            axiosWithAuth().get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/1/events")
+            .then(response  => {
+                console.log("response from dashboard server from events endpoint", response);
+            } )
+            .catch(err => {
+                console.log("response from dashboard server", err);
+            })
+            axiosWithAuth().get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/2/events/todolist")
+            .then(response  => {
+                console.log("response from dashboard server from events todolist endpoint ", response);
             } )
             .catch(err => {
                 console.log("response from dashboard server", err);

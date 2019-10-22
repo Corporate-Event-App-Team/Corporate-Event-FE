@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import * as actionCreators from "../src/state/actionCreators";
 import Dashboard from "./components/Dashboard";
 import Register from "./components/Register";
+import AddEvents from "./components/AddEvents";
 
 export function App(props) {
   console.log("props from app", props);
@@ -19,6 +20,7 @@ export function App(props) {
       <Route exact path="/register" component={Register} />
 
       <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/add-event" component={AddEvents}/>
       <NotificationContainer />
     </div>
   );
