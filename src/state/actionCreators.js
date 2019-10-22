@@ -1,6 +1,7 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 import { NotificationManager } from "react-notifications";
+import axiosWithAuth from "../axios/axiosWithAuth";
 
 
 export const getError = err => {

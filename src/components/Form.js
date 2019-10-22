@@ -35,28 +35,29 @@ const FormStyle = styled.form`
 
 const Form = (props) => {
     console.log("props from register form",props);
-    const {onFormSubmit, formValues, onNameChange, onPasswordChange, onCPasswordChange, onEmailChange} = props;
+    const {onFormSubmit, formValues, onNameChange, } = props;
+    //onPasswordChange, onCPasswordChange, onEmailChange
 
     return (
         <FormStyle>
           <label>
             Username
-            <input type='text' onChange={onNameChange} value={formValues.username} />
+            <input type='text' name="username" onChange={onNameChange} value={formValues.username} />
           </label>
 
           <label>
             Email Address
-            <input type='text' onChange={onEmailChange} value={formValues.emailAddress} />
+            <input type='text' name="emailAddress" onChange={onNameChange} value={formValues.emailAddress} />
           </label>
 
           <label>
             Password
-            <input type='password' onChange={onPasswordChange} value={formValues.password} />
+            <input type='password' name="password" onChange={onNameChange} value={formValues.password} />
           </label>
 
           <label>
             Confirm Password
-            <input type='password' onChange={onCPasswordChange} value={formValues.confirmPassword} />
+            <input type='password' name="confirmPassword" onChange={onNameChange} value={formValues.confirmPassword} />
           </label>
 
          <button onClick={(e)=> onFormSubmit(e, formValues)} >REGISTER</button>

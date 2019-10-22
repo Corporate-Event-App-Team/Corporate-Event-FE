@@ -17,34 +17,6 @@ export const Login = props => {
   const [userDetails] = useState({ username: "", password: "" });
   console.log("props from redux Store", props);
 
-//   const createNotification = type => {
-//     return () => {
-//       switch (type) {
-//         case "info":
-//           NotificationManager.info(" A moment while we check your details");
-//           break;
-//         case "success":
-//           NotificationManager.success(" A moment while we check your details");
-//           break;
-//         case "warning":
-//           NotificationManager.warning(
-//             "Warning message",
-//             "Close after 3000ms",
-//             3000
-//           );
-//           break;
-//         case "error":
-//           NotificationManager.error(
-//             "Error message",
-//             "Something went terribly wrong"
-//           );
-//           break;
-//         default:
-//           NotificationManager.info("Info message");
-//       }
-//     };
-//   };
-
   return (
     <StyledLoginDiv>
       <NavBar />

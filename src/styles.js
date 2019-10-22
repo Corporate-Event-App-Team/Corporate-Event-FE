@@ -97,7 +97,6 @@ export const StyledRegisterBtn = styled.button`
 export const StyledDashboard = styled.div`
   display: flex;
   
-  }
 `;
 
 export const StyledUSerDiv = styled.div`
@@ -110,4 +109,24 @@ export const StyledUSerDiv = styled.div`
     width: 8vw;
     height: 12vh;
   }
+`;
+
+export const StyledH4 = styled.h4`
+    background: #090429;
+    color: white;
+    width: 15vw;
+    padding: 0.8em;
+    margin-left: 1em;
+`;
+
+export const StyledAddEventBtn = styled.button`
+ background: #fbab06;
+    color: white;
+    width: 15vw;
+    padding: 0.8em;
+    margin-left: 1em;
+    border: none;
+    :hover {
+ background: #090429;
+    }
 `;

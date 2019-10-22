@@ -14,3 +14,11 @@ export const loginReducer = (state = initialToken, action) => {
       return state;
   }
 };
+
+const initialEvents = {
+  eventName: '',
+  descriptionOfEvent: '',
+  date: '',
+  time: '',
+  
+}

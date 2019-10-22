@@ -64,20 +64,20 @@ export default function Register(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const onNameChange = e => {
-    setFormValues({ ...formValues, username: e.target.value });
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  const onEmailChange = e => {
-    setFormValues({ ...formValues, emailAddress: e.target.value });
-  };
+  // const onEmailChange = e => {
+  //   setFormValues({ ...formValues, emailAddress: e.target.value });
+  // };
 
-  const onPasswordChange = e => {
-    setFormValues({ ...formValues, password: e.target.value });
-  };
+  // const onPasswordChange = e => {
+  //   setFormValues({ ...formValues, password: e.target.value });
+  // };
 
-  const onCPasswordChange = e => {
-    setFormValues({ ...formValues, confirmPassword: e.target.value });
-  };
+  // const onCPasswordChange = e => {
+  //   setFormValues({ ...formValues, confirmPassword: e.target.value });
+  // };
 
   const onFormSubmit = (e, formValues) => {
     e.preventDefault();
@@ -94,6 +94,7 @@ export default function Register(props) {
       )
         .then(response => {
           NotificationManager.success("Registration successful");
+          console.log("response from Register endpoint",response);
           props.history.push("/");
         })
         .catch(err => {
@@ -101,7 +102,7 @@ export default function Register(props) {
             err.message,
             "Something went terribly wrong!"
           );
-          console.log(err);
+          console.log("error from Register endpoint",err);
         });
     } else {
       setFormValues({ ...formValues, password: "", confirmPassword: "" });
@@ -129,10 +130,10 @@ export default function Register(props) {
           <Form
             onNameChange={onNameChange}
             onFormSubmit={onFormSubmit}
-            onEmailChange={onEmailChange}
-            onCPasswordChange={onCPasswordChange}
+            // onEmailChange={onEmailChange}
+            // onCPasswordChange={onCPasswordChange}
             formValues={formValues}
-            onPasswordChange={onPasswordChange}
+            // onPasswordChange={onPasswordChange}
           />
         </section>
       </div>
