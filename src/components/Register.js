@@ -7,7 +7,7 @@ import image from "../imgs/register_back.jpg";
 import logo from "../imgs/corporate_logo.png";
 import Axios from "axios";
 import Form from "./Form";
-// import {Route} from 'react-router-dom';
+
 
 const RegisterStyle = styled.div`
   height: 100vh;
@@ -68,6 +68,7 @@ export default function Register(props) {
   const onNameChange = e => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
+
   const onFormSubmit = (e, formValues) => {
     e.preventDefault();
     if (formValues.password.length > 8 && formValues.password.length < 12) {

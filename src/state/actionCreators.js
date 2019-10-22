@@ -50,19 +50,18 @@ export const getUser = (props) => dispatch => {
 };
 
 export const showUserError = err => {
-  return { type: types.GET_USER_ERROR, payload: err };
+  return { type: types.SHOW_USER_ERROR, payload: err };
 };
 
 export const showUser = (props) => dispatch => {
   axiosWithAuth()
     .get(
-      `https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/${props}`
+      `https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/2/events`
     )
     .then(res => {
-      console.log("response from users endpoint", res);
-      const loggedUser = res.data.find((user) => user.username === props );
-      console.log("user who is logged in", props, loggedUser);
-      dispatch({ type: types.GET_USER, payload: loggedUser});
+      console.log("response from user event endpoint", res);
+      NotificationManager.success(" Getting your event data");
+      dispatch({ type: types.SHOW_USER, payload: res.data});
     })
     .catch(err => {
       console.log("response from users endpoint", err);

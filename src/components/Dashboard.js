@@ -14,6 +14,7 @@ export const Dashboard = props => {
   console.log("props from Dashboard", props);
   useEffect(() => {
     props.getUser(props.login.username);
+    props.showUser(props.user.id);
   }, []);
   //     axiosWithAuth().
   //get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/")
