@@ -4,8 +4,10 @@ import {
   StyledDashboard,
   StyledUSerDiv,
   StyledH4,
-  StyledAddEventBtn
+  StyledAddEventBtn,
+  StyledDashEventDiv
 } from "../styles";
+import { NavLink } from "react-router-dom";
 import axiosWithAuth from "../axios/axiosWithAuth";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
@@ -15,7 +17,10 @@ export const Dashboard = props => {
   useEffect(() => {
     props.getUser(props.login.username);
     props.showUser(props.user.id);
-  }, []);
+  }, [props]);
+
+  const userEvents = props.events.events;
+  console.log("userevents", userEvents);
   //     axiosWithAuth().
   //get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/")
   //     .then(response  => {
@@ -46,13 +51,29 @@ export const Dashboard = props => {
         <img alt="user icon" src={user_icon} />
         <h4>Hello, {props.login.username}</h4>
       </StyledUSerDiv>
-      <div>
+      <StyledDashEventDiv>
         <StyledH4>Past Events</StyledH4>
-        <div>Events from Backend</div>
-        <StyledH4>Present Events</StyledH4>
-        <div>Events from Backend</div>
-        <StyledAddEventBtn>Add a new event</StyledAddEventBtn>
-      </div>
+        <div>
+          {userEvents.length === 0 ? (
+            <h4>You don't have any events</h4>
+          ) : (
+            userEvents.map(event => {
+              return (
+                <div key={event.id}>
+                  <h4>Budget: {event.budget}</h4>
+                  <h4>Company: {event.company}</h4>
+                  <h4>Description: {event.description}</h4>
+                </div>
+              );
+            })
+          )}
+        </div>
+        {/* <StyledH4>Present Events</StyledH4>
+        <div>Events from Backend</div> */}
+        <NavLink to="/dashboard/add-event">
+          <StyledAddEventBtn>Add a new event</StyledAddEventBtn>
+        </NavLink>
+      </StyledDashEventDiv>
     </StyledDashboard>
   );
 };

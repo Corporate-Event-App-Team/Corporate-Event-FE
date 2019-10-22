@@ -63,7 +63,7 @@ const userEvents = {
 export const userEventsReducer = (state=userEvents,action) => {
   switch(action.type) {
     case types.SHOW_USER: 
-    return {...state, events: [...state.events,action.payload]};
+    return {...state, events: action.payload};
     default:
       return state;
   }
