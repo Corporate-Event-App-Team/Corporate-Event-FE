@@ -96,15 +96,18 @@ export const StyledRegisterBtn = styled.button`
 
 export const StyledDashboard = styled.div`
   display: flex;
-  div {
-    width: 20vw;
-    height: 100vh;
-    background: #090429;
-    box-shadow: 0 +6px 8px   6px lightblue ;
-    img {
-      margin-top: 8vw;
-      width: 8vw;
-      height: 12vh;
-    }
+  
+  }
+`;
+
+export const StyledUSerDiv = styled.div`
+  width: 20vw;
+  height: 100vh;
+  background: #090429;
+  box-shadow: 0 +6px 8px 6px lightblue;
+  img {
+    margin-top: 8vw;
+    width: 8vw;
+    height: 12vh;
   }
 `;
