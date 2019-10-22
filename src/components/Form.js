@@ -6,6 +6,7 @@ const FormStyle = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* width: 50vw; */
     /* align-items: baseline; */
     label input {
         height: 35px;
