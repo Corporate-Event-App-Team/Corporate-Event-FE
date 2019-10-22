@@ -56,11 +56,10 @@ export const showUserError = err => {
 export const showUser = (props) => dispatch => {
   axiosWithAuth()
     .get(
-      `https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/2/events`
+      `https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/${props}/events`
     )
     .then(res => {
       console.log("response from user event endpoint", res);
-      NotificationManager.success(" Getting your event data");
       dispatch({ type: types.SHOW_USER, payload: res.data});
     })
     .catch(err => {
