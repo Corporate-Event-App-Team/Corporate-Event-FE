@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import NavBar from "./NavBar";
-import {StyledAddEvntsForm, StyledAddEvntsDiv, StyledAddEvntInpt} from "../styles";
+import {StyledAddEvntsForm, StyledAddEvntsDiv, StyledAddEvntInpt,StyledButton} from "../styles";
 
 const AddEvents = () => {
 const [eventBody, setEventBody] = useState({
@@ -33,17 +33,18 @@ const [eventBody, setEventBody] = useState({
             <NavBar/>
             <StyledAddEvntsForm>
                 <label>Event Name</label>
-                <StyledAddEvntInpt name="eventName" value/>
+                <StyledAddEvntInpt name="eventName" onChange={valueChange}/>
                 <label>Description </label>
-                <StyledAddEvntInpt name="descriptionOfEvent"/>
+                <StyledAddEvntInpt name="descriptionOfEvent" onChange={valueChange}/>
                 <label>Due date</label>
-                <StyledAddEvntInpt name="date"/>
+                <StyledAddEvntInpt name="date" onChange={valueChange}/>
                 <label>time</label>
-                <StyledAddEvntInpt name="time"/>
+                <StyledAddEvntInpt name="time" onChange={valueChange}/>
                 <label>todoList</label>
-                <StyledAddEvntInpt name="todoList"/>
+                <StyledAddEvntInpt name="todoList"onChange={valueChange}/>
                  <label>Vendors</label>
-                <StyledAddEvntInpt name="vendors"/> 
+                <StyledAddEvntInpt name="vendors" onChange={valueChange}/> 
+                <StyledButton>Add event</StyledButton>
             </StyledAddEvntsForm>
         </StyledAddEvntsDiv>
     )

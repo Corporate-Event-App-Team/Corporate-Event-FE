@@ -11,7 +11,8 @@ import * as serviceWorker from './serviceWorker';
 import * as reducers from "../src/state/reducers";
 
 const monsterReducer = combineReducers({
-    login: reducers.loginReducer
+    login: reducers.loginReducer,
+    user: reducers.userReducer
 });
 
 const store = createStore(

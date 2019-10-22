@@ -137,6 +137,10 @@ export const StyledAddEvntsForm = styled.form`
   padding-top: 1vw;
   align-items: center;
   color: white;
+  border: 0.5em solid rgba(255, 255, 255, 0.3);
+  width: 40vw;
+  margin-left: 30vw;
+  margin-top: 1em;
 `;
 
 export const StyledAddEvntsDiv = styled.div`

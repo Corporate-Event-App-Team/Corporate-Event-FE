@@ -65,27 +65,11 @@ const initialFormValues = {
 
 export default function Register(props) {
   const [formValues, setFormValues] = useState(initialFormValues);
-
   const onNameChange = e => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
-
-  // const onEmailChange = e => {
-  //   setFormValues({ ...formValues, emailAddress: e.target.value });
-  // };
-
-  // const onPasswordChange = e => {
-  //   setFormValues({ ...formValues, password: e.target.value });
-  // };
-
-  // const onCPasswordChange = e => {
-  //   setFormValues({ ...formValues, confirmPassword: e.target.value });
-  // };
-
   const onFormSubmit = (e, formValues) => {
     e.preventDefault();
-    // const newUser = {...formValues,}
-    
     if (formValues.password.length > 8 && formValues.password.length < 12) {
       Axios.post(
         "https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/register",
@@ -129,10 +113,7 @@ export default function Register(props) {
           <Form
             onNameChange={onNameChange}
             onFormSubmit={onFormSubmit}
-            // onEmailChange={onEmailChange}
-            // onCPasswordChange={onCPasswordChange}
             formValues={formValues}
-            // onPasswordChange={onPasswordChange}
           />
         </section>
       </div>
