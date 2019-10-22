@@ -5,7 +5,7 @@ import username_icon from "../src/imgs/username_icon.jpg";
 import pass_icon_2 from "../src/imgs/pass_icon_2.jpg";
 
 export const StyledLoginDiv = styled.div`
-  background-image:url(${form_back});
+  background-image: url(${form_back});
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -17,6 +17,10 @@ export const StyledForm = styled.form`
   padding-top: 1vw;
   align-items: center;
   color: white;
+  width: 40vw;
+  margin-left: 30vw;
+  margin-top: 1em;
+  border: 0.5em solid rgba(255, 255, 255, 0.3);
 `;
 
 export const StyledInput = styled.input`
@@ -52,13 +56,13 @@ export const StyledPassword = styled.input`
 export const StyledButton = styled.button`
   margin: 1em;
   padding: 0.7em;
-  background-color: #3AA9CF;
+  background-color: #3aa9cf;
   border: none;
   border-radius: 1em;
   width: 13vw;
   color: aliceblue;
   :hover {
-    background: #FC6567;
+    background: #fc6567;
   }
 `;
 
@@ -96,39 +100,44 @@ export const StyledRegisterBtn = styled.button`
 
 export const StyledDashboard = styled.div`
   display: flex;
-  
+  background-image: url(${form_back});
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 `;
 
 export const StyledUSerDiv = styled.div`
-  width: 20vw;
+  width: 25vw;
   height: 100vh;
-  background: #090429;
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 +6px 8px 6px lightblue;
-  img {
+  h4 {
     margin-top: 8vw;
+  }
+  img {
     width: 8vw;
     height: 12vh;
   }
 `;
 
 export const StyledH4 = styled.h4`
-    background: #090429;
-    color: white;
-    width: 15vw;
-    padding: 0.8em;
-    margin-left: 1em;
+  background: #090429;
+  color: white;
+  width: 15vw;
+  padding: 0.8em;
+  margin-left: 1em;
 `;
 
 export const StyledAddEventBtn = styled.button`
- background: #fbab06;
-    color: white;
-    width: 15vw;
-    padding: 0.8em;
-    margin-left: 1em;
-    border: none;
-    :hover {
- background: #090429;
-    }
+  background: #fbab06;
+  color: white;
+  width: 15vw;
+  padding: 0.8em;
+  margin-left: 1em;
+  border: none;
+  :hover {
+    background: #090429;
+  }
 `;
 
 export const StyledAddEvntsForm = styled.form`
@@ -144,12 +153,10 @@ export const StyledAddEvntsForm = styled.form`
 `;
 
 export const StyledAddEvntsDiv = styled.div`
- background-image: 
-  url(${form_back});
+  background-image: url(${form_back});
   background-size: cover;
   width: 100vw;
-  height:100vh;
-
+  height: 100vh;
 `;
 
 export const StyledAddEvntInpt = styled.input`
@@ -157,12 +164,13 @@ export const StyledAddEvntInpt = styled.input`
   background-color: rgba(255, 255, 255, 0.3);
   padding: 0.5em;
   border-radius: 1em;
-    margin: 0.5em;
-    padding: 1em;
+  margin: 0.5em;
+  padding: 1em;
 `;
 
 export const StyledDashEventDiv = styled.div`
-background-color: #57C5EA;
+  background: rgba(255, 255, 255, 0.3);
+
   width: 80vw;
   height: 100vh;
 `;

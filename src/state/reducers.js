@@ -1,4 +1,5 @@
 import * as types from "./actionTypes";
+import uuid from "uuid";
 const initialToken = {
   token: "", 
   username: ""
@@ -31,11 +32,19 @@ const initialEvents = {
   ]
 }
 
-export function dashboardReducer(state=initialEvents, action) {
+const initialEvent = {
+  event : {
+    budget: "",
+    description: "",
+    events_id: uuid()
+  }
+}
+
+export function addEventReducer(state=initialEvent, action) {
   switch(action.type) {
     case types.ADD_EVENT: 
     return {
-      ...state, events : [...state.events, ...action.payload]
+      ...state, event : action.payload
     };
 
     default: 

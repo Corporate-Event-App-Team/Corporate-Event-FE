@@ -70,9 +70,31 @@ export const showUser = (props) => dispatch => {
 };
 
 
-export const addEvent = (event) => {
-  return {type: types.ADD_EVENT, payload: event}
-}
+// export const addEvent = (event) => {
+//   return {type: types.ADD_EVENT, payload: event}
+// }
+
+export const AddEventError = err => {
+  return { type: types.ADD_EVENT_ERROR, payload: err };
+};
+
+export const AddEvent = (props,eventBody) => dispatch => {
+  axiosWithAuth()
+    .post(
+      `https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/events`, eventBody
+    )
+    .then(res => {
+      console.log("response from add event endpoint", res);
+      props.history.push("/dashboard");
+      dispatch({ type: types.ADD_EVENT, payload: res.data});
+    })
+    .catch(err => {
+      console.log("response from add endpoint", eventBody, err);
+      NotificationManager.error(err.message,"Something went terribly wrong");
+      dispatch(getUserError(err.message));
+    });
+};
+
 
 // export const saveEvent =((id, newEvent) => ispatch ==>{}
 //   axiosWithAuth().post(`https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/${id}/events`, newEvent)

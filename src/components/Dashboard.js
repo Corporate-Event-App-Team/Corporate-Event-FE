@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import user_icon from "../imgs/User_icon.png";
+import user_icon_2 from "../imgs/user_icon_2.png";
 import {
   StyledDashboard,
   StyledUSerDiv,
@@ -21,34 +21,11 @@ export const Dashboard = props => {
 
   const userEvents = props.events.events;
   console.log("userevents", userEvents);
-  //     axiosWithAuth().
-  //get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/")
-  //     .then(response  => {
-  //         console.log("response from dashboard server users endpoint", response);
-  //     } )
-  //     .catch(err => {
-  //         console.log("response from dashboard server", err);
-  //     })
-  //     axiosWithAuth().get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/1/events")
-  //     .then(response  => {
-  //         console.log("response from dashboard server from events endpoint", response);
-  //     } )
-  //     .catch(err => {
-  //         console.log("response from dashboard server", err);
-  //     })
-  //     axiosWithAuth().get("https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/2/events/todolist")
-  //     .then(response  => {
-  //         console.log("response from dashboard server from events todolist endpoint ", response);
-  //     } )
-  //     .catch(err => {
-  //         console.log("response from dashboard server", err);
-  //     })
-
-  // },[])
   return (
     <StyledDashboard>
       <StyledUSerDiv>
-        <img alt="user icon" src={user_icon} />
+          <h4>Welcome to the Corporate Event Planner Dashboard</h4>
+        <img alt="user icon" src={user_icon_2} />
         <h4>Hello, {props.login.username}</h4>
       </StyledUSerDiv>
       <StyledDashEventDiv>

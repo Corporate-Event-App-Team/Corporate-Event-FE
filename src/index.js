@@ -13,7 +13,8 @@ import * as reducers from "../src/state/reducers";
 const monsterReducer = combineReducers({
     login: reducers.loginReducer,
     user: reducers.userReducer,
-    events: reducers.userEventsReducer
+    events: reducers.userEventsReducer,
+    newEvent: reducers.addEventReducer
 });
 
 const store = createStore(
