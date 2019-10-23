@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import login_back from "../src/imgs/login_back.jpg";
-import form_back from "../src/imgs/form_back.jpeg";
-import username_icon from "../src/imgs/username_icon.jpg";
-import pass_icon_2 from "../src/imgs/pass_icon_2.jpg";
+// // import  from "../src/imgs/.jpeg";
+// // import username_icon from "../src/imgs/username_icon.jpg";
+// // // import pass_icon_2 from "../src/imgs/pass_icon_2.jpg";
 
 export const StyledLoginDiv = styled.div`
-  background-image: url(${form_back});
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -29,7 +28,6 @@ export const StyledInput = styled.input`
   background-color: rgba(255, 255, 255, 0.3);
   padding: 0.5em;
   border-radius: 1em;
-  background-image: url(${username_icon});
   background-size: 20%;
   background-repeat: no-repeat;
   text-indent: 20px;
@@ -44,7 +42,6 @@ export const StyledPassword = styled.input`
   background-color: rgba(255, 255, 255, 0.3);
   padding: 0.5em;
   border-radius: 1em;
-  background-image: url(${pass_icon_2});
   background-size: 20%;
   background-repeat: no-repeat;
   text-indent: 20px;
@@ -69,7 +66,6 @@ export const StyledButton = styled.button`
 export const StyledImg = styled.img`
   width: 7vw;
   height: 6vw;
-  /* margin: 1em; */
 `;
 
 export const StyledNavBar = styled.div`
@@ -100,7 +96,6 @@ export const StyledRegisterBtn = styled.button`
 
 export const StyledDashboard = styled.div`
   display: flex;
-  background-image: url(${form_back});
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -153,7 +148,6 @@ export const StyledAddEvntsForm = styled.form`
 `;
 
 export const StyledAddEvntsDiv = styled.div`
-  background-image: url(${form_back});
   background-size: cover;
   width: 100vw;
   height: 100vh;

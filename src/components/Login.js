@@ -37,7 +37,7 @@ export const Login = props => {
           return errors;
         }}
         onSubmit={(userDetails, actions) => {
-          props.onLogin(userDetails,props);
+          props.onLogin(userDetails, props);
           actions.resetForm();
         }}
       >
@@ -89,7 +89,7 @@ export const Login = props => {
             </span>
             <StyledButton
               type="submit"
-              // onClick={() => 
+              // onClick={() =>
               //   NotificationManager.info("A moment while we check your details"
               //   )}
               disabled={isSubmitting}
