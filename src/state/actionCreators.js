@@ -99,9 +99,3 @@ export const AddEvent = (props, eventBody) => dispatch => {
       dispatch(getUserError(err.message));
     });
 };
-
-// export const saveEvent =((id, newEvent) => ispatch ==>{}
-//   axiosWithAuth().post(`https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/users/${id}/events`, newEvent)
-//   .then(() => {
-//     dispatch(addEvent())
-//   })

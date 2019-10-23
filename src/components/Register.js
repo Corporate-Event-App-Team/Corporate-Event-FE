@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NotificationManager } from "react-notifications";
+// import { NotificationManager } from "react-notifications";
 import styled from "styled-components";
 import uuid from "uuid";
 import form_back from "../imgs/form_back.jpeg";

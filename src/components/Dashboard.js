@@ -18,7 +18,7 @@ export const Dashboard = props => {
   useEffect(() => {
     getUser(login.username);
     showUser(user.id);
-  }, [login,user]);
+  }, [login,user, getUser,showUser]);
 
   const userEvents = props.events.events;
   console.log("userevents", userEvents);
