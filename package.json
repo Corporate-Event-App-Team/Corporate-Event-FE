@@ -1,6 +1,7 @@
 {
   "name": "corporate-event-frontend",
   "version": "0.1.0",
+  "homepage": "https://corporate-event-app-team.github.io/Corporate-Event-FE/",
   "private": true,
   "dependencies": {
     "formik": "^1.5.8",
