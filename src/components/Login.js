@@ -29,9 +29,9 @@ export const Login = props => {
           }
           if (!userDetails.password) {
             errors.password = "Please provide a password!";
-          } else if (userDetails.password.length < 7) {
+          } else if (userDetails.password.length < 9) {
             errors.password = "Your password must be more than 8 characters!";
-          } else if (userDetails.password.length > 11) {
+          } else if (userDetails.password.length > 12) {
             errors.password = "Your password must be less than 12 characters!";
           }
           return errors;
