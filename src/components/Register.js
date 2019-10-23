@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { NotificationManager } from "react-notifications";
+// import { NotificationManager } from "react-notifications";
 import styled from "styled-components";
 import uuid from "uuid";
 import form_back from "../imgs/form_back.jpeg";
-
-import image from "../imgs/register_back.jpg";
 import logo from "../imgs/corporate_logo.png";
 import Axios from "axios";
 import Form from "./Form";
@@ -86,15 +84,15 @@ export default function Register(props) {
        { username:formValues.username, password: formValues.password}
         )
         .then(response => {
-          NotificationManager.success("Registration successful");
+          // NotificationManager.success("Registration successful");
           console.log("response from Register endpoint",response);
           props.history.push("/");
         })
         .catch(err => {
-          NotificationManager.error(
-            err.message,
-            "Something went terribly wrong!"
-          );
+          // NotificationManager.error(
+          //   err.message,
+          //   "Something went terribly wrong!"
+          // );
           console.log("error from Register endpoint",err);
         });
     } else {

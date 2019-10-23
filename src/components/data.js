@@ -5,6 +5,7 @@ export const dummyEvents = [
       description: 'Annual AGM for Derks closet',
       date: '25-02-2019',
       time: '10:00',
+      completed: false,
       todoList: ["Arrange Tables", "Buy decorations", "Call the caterers"],
       vendors: ["Cate's caterers", "Endless Decorations", "Event tents"],
       pictures: ""

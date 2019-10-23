@@ -8,16 +8,17 @@ import {
   StyledDashEventDiv
 } from "../styles";
 import { NavLink } from "react-router-dom";
-import axiosWithAuth from "../axios/axiosWithAuth";
+
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 
 export const Dashboard = props => {
   console.log("props from Dashboard", props);
+  const {getUser,showUser,login,user} = props;
   useEffect(() => {
-    props.getUser(props.login.username);
-    props.showUser(props.user.id);
-  }, []);
+    getUser(login.username);
+    showUser(user.id);
+  }, [login,user, getUser,showUser]);
 
   const userEvents = props.events.events;
   console.log("userevents", userEvents);
@@ -26,7 +27,7 @@ export const Dashboard = props => {
       <StyledUSerDiv>
           <h4>Welcome to the Corporate Event Planner Dashboard</h4>
         <img alt="user icon" src={user_icon_2} />
-        <h4>Hello, {props.login.username}</h4>
+        <h4>Hello, {login.username}</h4>
       </StyledUSerDiv>
       <StyledDashEventDiv>
         <StyledH4>Past Events</StyledH4>
