@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Corporate-Event-FE/static/css/main.17073c00.chunk.css",
+    "main.js": "/Corporate-Event-FE/static/js/main.5249b91f.chunk.js",
+    "main.js.map": "/Corporate-Event-FE/static/js/main.5249b91f.chunk.js.map",
+    "runtime-main.js": "/Corporate-Event-FE/static/js/runtime-main.969ec293.js",
+    "runtime-main.js.map": "/Corporate-Event-FE/static/js/runtime-main.969ec293.js.map",
+    "static/js/2.6a605bcb.chunk.js": "/Corporate-Event-FE/static/js/2.6a605bcb.chunk.js",
+    "static/js/2.6a605bcb.chunk.js.map": "/Corporate-Event-FE/static/js/2.6a605bcb.chunk.js.map",
+    "index.html": "/Corporate-Event-FE/index.html",
+    "precache-manifest.94fe382d04daeae58557731faef2830f.js": "/Corporate-Event-FE/precache-manifest.94fe382d04daeae58557731faef2830f.js",
+    "service-worker.js": "/Corporate-Event-FE/service-worker.js",
+    "static/css/main.17073c00.chunk.css.map": "/Corporate-Event-FE/static/css/main.17073c00.chunk.css.map",
+    "static/media/form_back.jpeg": "/Corporate-Event-FE/static/media/form_back.ad152469.jpeg",
+    "static/media/login_back.jpg": "/Corporate-Event-FE/static/media/login_back.e3c35377.jpg",
+    "static/media/pass_icon_2.jpg": "/Corporate-Event-FE/static/media/pass_icon_2.cf3e77b5.jpg",
+    "static/media/user_icon_2.png": "/Corporate-Event-FE/static/media/user_icon_2.e7119e2a.png",
+    "static/media/username_icon.jpg": "/Corporate-Event-FE/static/media/username_icon.f7f78085.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.969ec293.js",
+    "static/js/2.6a605bcb.chunk.js",
+    "static/css/main.17073c00.chunk.css",
+    "static/js/main.5249b91f.chunk.js"
+  ]
+}
