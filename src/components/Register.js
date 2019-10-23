@@ -102,7 +102,7 @@ export default function Register(props) {
       </nav>
 
       <div>
-        {/* <img src={image} alt="for-register" /> */}
+
 
         <section>
 
