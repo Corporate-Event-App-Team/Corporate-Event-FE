@@ -42,17 +42,10 @@ const RegisterStyle = styled.div`
   div {
     display: flex;
     align-items: center;
-    /* background-color: #e5e5e5; */
     width: 50vw;
     margin-left: 25vw;
     margin-top: 1em;
   border: 0.5em solid rgba(255, 255, 255, 0.3);
-
-
-    /* img {
-      width: 50%;
-      height: 100vh;
-    } */
     section {
       text-align: center;
 
