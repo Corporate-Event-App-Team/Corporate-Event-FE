@@ -84,11 +84,13 @@ export const AddEvent = (props,eventBody) => dispatch => {
       `https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/events`, eventBody
     )
     .then(res => {
+      debugger
       console.log("response from add event endpoint", res);
       props.history.push("/dashboard");
       dispatch({ type: types.ADD_EVENT, payload: res.data});
     })
     .catch(err => {
+      debugger
       console.log("response from add endpoint", eventBody, err);
       NotificationManager.error(err.message,"Something went terribly wrong");
       dispatch(getUserError(err.message));

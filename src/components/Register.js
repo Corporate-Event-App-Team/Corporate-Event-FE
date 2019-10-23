@@ -83,8 +83,8 @@ export default function Register(props) {
     if (formValues.password.length > 8 && formValues.password.length < 12) {
       Axios.post(
         "https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/register",
-        formValues
-      )
+       { username:formValues.username, password: formValues.password}
+        )
         .then(response => {
           NotificationManager.success("Registration successful");
           console.log("response from Register endpoint",response);
