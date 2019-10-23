@@ -2,15 +2,14 @@ import React, { useState } from "react";
 // import { NotificationManager } from "react-notifications";
 import styled from "styled-components";
 import uuid from "uuid";
-import form_back from "../imgs/form_back.jpeg";
-import logo from "../imgs/corporate_logo.png";
+// import form_back from "../imgs/form_back.jpeg";
+// import logo from "../imgs/corporate_logo.png";
 import Axios from "axios";
 import Form from "./Form";
 
-
 const RegisterStyle = styled.div`
   height: 100vh;
-  background-image:url(${form_back});
+ 
   background-size: cover;
   width: 100vw;
 
@@ -45,7 +44,7 @@ const RegisterStyle = styled.div`
     width: 50vw;
     margin-left: 25vw;
     margin-top: 1em;
-  border: 0.5em solid rgba(255, 255, 255, 0.3);
+    border: 0.5em solid rgba(255, 255, 255, 0.3);
     section {
       text-align: center;
 
@@ -74,11 +73,11 @@ export default function Register(props) {
     if (formValues.password.length > 8 && formValues.password.length < 12) {
       Axios.post(
         "https://cors-anywhere.herokuapp.com/https://corporate-event-planner-build.herokuapp.com/api/auth/register",
-       { username:formValues.username, password: formValues.password}
-        )
+        { username: formValues.username, password: formValues.password }
+      )
         .then(response => {
           // NotificationManager.success("Registration successful");
-          console.log("response from Register endpoint",response);
+          console.log("response from Register endpoint", response);
           props.history.push("/");
         })
         .catch(err => {
@@ -86,7 +85,7 @@ export default function Register(props) {
           //   err.message,
           //   "Something went terribly wrong!"
           // );
-          console.log("error from Register endpoint",err);
+          console.log("error from Register endpoint", err);
         });
     } else {
       setFormValues({ ...formValues, password: "" });
@@ -97,15 +96,12 @@ export default function Register(props) {
   return (
     <RegisterStyle>
       <nav>
-        <img src={logo} alt="corporate-logo" />
+        {/* <img src={logo} alt="corporate-logo" /> */}
         <a href="/">LOGIN</a>
       </nav>
 
       <div>
-
-
         <section>
-
           <Form
             onNameChange={onNameChange}
             onFormSubmit={onFormSubmit}
