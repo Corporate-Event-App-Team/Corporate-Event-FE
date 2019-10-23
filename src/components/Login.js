@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import { Formik } from "formik";
-import { NotificationManager } from "react-notifications";
+// import { NotificationManager } from "react-notifications";
 
 import {
   StyledLoginDiv,
@@ -31,7 +31,7 @@ export const Login = props => {
             errors.password = "Please provide a password!";
           } else if (userDetails.password.length < 9) {
             errors.password = "Your password must be more than 8 characters!";
-          } else if (userDetails.password.length > 12) {
+          } else if (userDetails.password.length > 11) {
             errors.password = "Your password must be less than 12 characters!";
           }
           return errors;
@@ -89,7 +89,9 @@ export const Login = props => {
             </span>
             <StyledButton
               type="submit"
-              onClick={() => NotificationManager.info("A moment while we check your details")}
+              // onClick={() => 
+              //   NotificationManager.info("A moment while we check your details"
+              //   )}
               disabled={isSubmitting}
             >
               Submit

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
-import { NotificationContainer } from "react-notifications";
-import "react-notifications/lib/notifications.css";
+// import { NotificationContainer } from "react-notifications";
+// import "react-notifications/lib/notifications.css";
 
 import "./App.css";
 import Login from "./components/Login";
@@ -24,7 +24,7 @@ export function App(props) {
          exact path="/dashboard"
           component={Dashboard}
         />
-      <NotificationContainer />
+      {/* <NotificationContainer /> */}
     </div>
   );
 }
